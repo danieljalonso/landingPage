@@ -1,0 +1,205 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ojímetro</title><style>
+:root{--ink:#1B1035;--ink2:#2A1A52;--violet:#6C3CF0;--yellow:#FFD23F;--pink:#FF5FA2;--mint:#3EE6B0;--cream:#FFF8EC;--muted:#6B6385}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}html,body{overflow-x:hidden}
+body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--cream);color:var(--ink)}
+h1,h2,h3{font-family:"Inter Display",Inter,system-ui,sans-serif;letter-spacing:-0.025em}
+a{color:inherit;text-decoration:none}
+section{position:relative;overflow:hidden}
+.wrap{max-width:1360px;margin:0 auto;padding:0 clamp(20px,6vw,100px)}
+.tag{display:inline-block;font-weight:800;font-size:15px;letter-spacing:.12em;text-transform:uppercase;padding:8px 14px;border-radius:10px;background:var(--yellow);color:var(--ink);transform:rotate(-2deg)}
+h2{font-size:clamp(38px,5vw,70px);font-weight:900;line-height:1;margin-top:20px}
+.lead{font-size:clamp(18px,1.6vw,23px);line-height:1.5;color:var(--muted);max-width:760px;margin-top:20px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:20px 32px;border-radius:18px;font-weight:800;font-size:19px;border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink);transition:transform .12s,box-shadow .12s;cursor:pointer}
+.btn:hover{transform:translate(2px,2px);box-shadow:4px 4px 0 var(--ink)}
+.btn.y{background:var(--yellow)}.btn.w{background:#fff}
+.sec{padding:clamp(72px,8vw,120px) 0}
+#hero{background:var(--violet);color:#fff;padding-bottom:clamp(60px,8vw,110px)}
+#hero:before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.12) 2px,transparent 2px);background-size:34px 34px}
+nav{position:relative;display:flex;justify-content:space-between;align-items:center;max-width:1360px;margin:0 auto;padding:30px clamp(20px,6vw,100px)}
+.logo{display:flex;align-items:center;gap:12px;font-family:"Inter Display",Inter,sans-serif;font-weight:900;font-size:30px;letter-spacing:-.02em}
+.eye{width:48px;height:48px;border-radius:50%;background:#fff;border:3px solid var(--ink);display:grid;place-items:center;box-shadow:3px 3px 0 var(--ink)}
+.eye i{width:20px;height:20px;border-radius:50%;background:var(--ink);display:block;position:relative;left:4px}
+.eye i:after{content:"";position:absolute;width:6px;height:6px;border-radius:50%;background:#fff;top:4px;left:9px}
+.links{display:flex;gap:36px;font-weight:600;font-size:18px;opacity:.9}
+.hgrid{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;max-width:1360px;margin:0 auto;padding:30px clamp(20px,6vw,100px) 0}
+#hero h1{font-size:clamp(52px,7.4vw,112px);line-height:.92;font-weight:900;margin:22px 0}
+#hero h1 .hl{background:var(--yellow);color:var(--ink);padding:0 .12em;border-radius:14px;display:inline-block;transform:rotate(-2deg)}
+#hero .sub{font-size:clamp(19px,1.8vw,26px);line-height:1.45;color:#E9E2FF;max-width:600px}
+.ctas{display:flex;flex-wrap:wrap;gap:18px;margin-top:36px}
+#hero .btn{color:var(--ink)}
+.mini{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:34px;font-weight:600;color:#E9E2FF}
+.vis{position:relative;height:640px}
+.phone{position:absolute;right:40px;top:0;width:320px;height:640px;border-radius:46px;background:var(--ink);padding:12px;border:3px solid var(--ink);box-shadow:14px 14px 0 rgba(27,16,53,.55)}
+.scr{height:100%;border-radius:36px;background:var(--cream);color:var(--ink);padding:22px 18px;overflow:hidden}
+.notch{width:96px;height:24px;border-radius:14px;background:var(--ink);margin:-8px auto 16px}
+.top{display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:14px}
+.chip{background:#EDE6FF;color:var(--violet);padding:6px 10px;border-radius:999px;font-size:12px;font-weight:800}
+.timer{width:64px;height:64px;border-radius:50%;background:conic-gradient(var(--pink) 0 70%,#F1E8FF 70% 100%);display:grid;place-items:center;margin:22px auto 14px}
+.timer b{width:50px;height:50px;border-radius:50%;background:var(--cream);display:grid;place-items:center;font-size:20px}
+.q{font-family:"Inter Display",Inter,sans-serif;font-weight:900;font-size:25px;line-height:1.12;text-align:center}
+.qe{font-size:52px;text-align:center;margin:12px 0 4px}
+.who{text-align:center;font-size:13px;color:var(--muted);margin-top:14px}
+.input{margin-top:8px;border:3px solid var(--ink);border-radius:16px;padding:14px;font-size:28px;font-weight:900;text-align:center;background:#fff;box-shadow:4px 4px 0 var(--ink)}
+.input small{font-size:16px;color:var(--muted);font-weight:700}
+.send{margin-top:16px;background:var(--violet);color:#fff;text-align:center;padding:14px;border-radius:14px;font-weight:800;border:3px solid var(--ink)}
+.sticker{position:absolute;background:#fff;color:var(--ink);border:3px solid var(--ink);border-radius:20px;padding:14px 18px;box-shadow:6px 6px 0 var(--ink);font-weight:700}
+.st1{left:0;top:120px;transform:rotate(-5deg)}
+.st2{left:30px;bottom:70px;transform:rotate(4deg);background:var(--mint)}
+.st1 .big{font-family:"Inter Display",Inter,sans-serif;font-size:34px;font-weight:900;color:var(--pink)}
+.st2 .big{font-family:"Inter Display",Inter,sans-serif;font-size:26px;font-weight:900}
+.band{background:var(--ink);color:var(--yellow);padding:20px 0;white-space:nowrap;font-family:"Inter Display",Inter,sans-serif;font-weight:900;font-size:clamp(22px,2.4vw,32px);transform:rotate(-1.2deg);margin:0 -40px;position:relative;z-index:2;overflow:hidden}
+.band span{margin:0 22px}.band .d{color:var(--pink)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:60px}
+.step{background:#fff;border:3px solid var(--ink);border-radius:28px;padding:36px 32px;box-shadow:8px 8px 0 var(--ink)}
+.n{width:62px;height:62px;border-radius:18px;display:grid;place-items:center;font-family:"Inter Display",Inter,sans-serif;font-weight:900;font-size:30px;border:3px solid var(--ink)}
+.step h3{font-size:30px;font-weight:900;margin-top:24px}.step p{font-size:19px;color:var(--muted);line-height:1.5;margin-top:10px}
+#resultado{background:var(--ink);color:#fff}
+#resultado .lead{color:#C9C0E8}
+.rgrid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.board{background:var(--ink2);border:3px solid #3D2A73;border-radius:32px;padding:34px}
+.bq{font-size:15px;color:#C9C0E8;font-weight:600}.bq b{color:#fff;display:block;font-family:"Inter Display",Inter,sans-serif;font-size:24px;margin-top:6px}
+.ans{display:inline-block;margin-top:14px;background:var(--yellow);color:var(--ink);font-weight:900;padding:8px 14px;border-radius:10px}
+.bars{display:flex;align-items:flex-end;gap:18px;height:260px;margin-top:30px;border-bottom:3px solid #3D2A73}
+.bar{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+.bar .v{font-weight:900;font-size:16px;margin-bottom:8px}
+.bar .c{width:100%;border-radius:14px 14px 0 0}
+.names{display:flex;gap:18px;margin-top:12px}.names span{flex:1;text-align:center;font-weight:700;font-size:15px;color:#C9C0E8}
+.win{margin-top:24px;background:var(--mint);color:var(--ink);border-radius:16px;padding:14px 18px;font-weight:800;display:flex;justify-content:space-between}
+.fgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:60px}
+.f{border:3px solid var(--ink);border-radius:26px;padding:32px;background:#fff}
+.f .e{font-size:44px}.f h3{font-size:26px;font-weight:900;margin-top:14px}.f p{font-size:18px;color:var(--muted);margin-top:8px;line-height:1.5}
+#preguntas{background:var(--yellow)}
+#preguntas .lead{color:#5A4A1A}
+.qgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:56px}
+.qc{background:#fff;border:3px solid var(--ink);border-radius:24px;padding:26px;box-shadow:6px 6px 0 var(--ink)}
+.qc:nth-child(odd){transform:rotate(-1.5deg)}.qc:nth-child(even){transform:rotate(1.5deg)}
+.qc .cat{font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--violet)}
+.qc h3{font-size:22px;font-weight:900;margin-top:10px;line-height:1.2}
+.qc details{margin-top:16px}.qc summary{cursor:pointer;font-weight:800;color:var(--pink);list-style:none}
+.qc summary::-webkit-details-marker{display:none}
+.qc details p{margin-top:8px;font-family:"Inter Display",Inter,sans-serif;font-weight:900;font-size:28px}
+.faqs{margin-top:50px;display:flex;flex-direction:column;gap:14px;max-width:900px;margin-left:auto;margin-right:auto}
+.faqs details{background:#fff;border:3px solid var(--ink);border-radius:20px;padding:22px 26px}
+.faqs summary{font-weight:800;font-size:clamp(18px,1.5vw,22px);cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faqs summary::-webkit-details-marker{display:none}
+.faqs summary::after{content:"+";font-size:28px;line-height:1;color:var(--violet)}
+.faqs details[open] summary::after{content:"–"}
+.faqs p{font-size:clamp(16px,1.3vw,19px);color:var(--muted);line-height:1.55;margin-top:12px}
+.cta{background:var(--pink);border:3px solid var(--ink);border-radius:40px;box-shadow:12px 12px 0 var(--ink);padding:clamp(44px,7vw,90px);text-align:center;position:relative;overflow:hidden}
+.cta h2{color:var(--ink);font-size:clamp(42px,6vw,84px)}
+.cta p{font-size:clamp(18px,1.7vw,24px);margin-top:18px;font-weight:600}
+.cta .ctas{justify-content:center}
+.gp{display:inline-flex;align-items:center;gap:14px;background:var(--ink);color:#fff;border-radius:16px;padding:14px 24px;border:3px solid var(--ink)}
+.gp small{display:block;font-size:12px;opacity:.8;font-weight:600}.gp b{font-size:20px}
+.foot{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center;max-width:1360px;margin:0 auto;padding:40px clamp(20px,6vw,100px) 50px;color:var(--muted);font-weight:600}
+@media (max-width:1100px){
+ .hgrid,.rgrid{grid-template-columns:1fr}
+ .vis{width:520px;max-width:100%;margin:20px auto 0}
+ .steps,.fgrid{grid-template-columns:1fr 1fr}
+ .qgrid{grid-template-columns:1fr 1fr}
+ .links{display:none}
+}
+@media (max-width:640px){
+ .vis{height:460px;width:340px}
+ .phone{transform:scale(.7);transform-origin:top right;right:0}
+ .st1{transform:rotate(-5deg) scale(.8);transform-origin:top left;top:250px}
+ .st2{transform:rotate(4deg) scale(.8);transform-origin:bottom left;left:0;bottom:10px}
+ .steps,.fgrid,.qgrid{grid-template-columns:1fr}
+ nav .btn{display:none}
+}
+</style></head><body>
+
+<section id="hero">
+ <nav><div class="logo"><div class="eye"><i></i></div>Ojímetro</div>
+  <div class="links"><a href="#como">Cómo se juega</a><a href="#resultado">Resultados</a><a href="#preguntas">Preguntas</a><a href="#faq">FAQ</a></div>
+  <a href="#descargar" class="btn y" style="padding:14px 22px;font-size:17px">Descargar</a></nav>
+ <div class="hgrid">
+  <div>
+   <span class="tag">Juego de móvil · para jugar en grupo</span>
+   <h1>¿Cuánto crees que <span class="hl">es?</span></h1>
+   <p class="sub">El juego de calcular a ojo. Una pregunta, un número y una cuenta atrás. Gana quien más se acerque.</p>
+   <div class="ctas"><a href="#descargar" class="btn y">▶ Descargar gratis</a><a href="#como" class="btn w">Cómo se juega</a></div>
+   <div class="mini"><span>👥 Varios jugadores, un móvil</span><span>⏱️ Contra el reloj</span><span>🏆 Gana el que menos falla</span></div>
+  </div>
+  <div class="vis">
+   <div class="phone"><div class="scr"><div class="notch"></div>
+    <div class="top"><span>Ronda 3/10</span><span class="chip">🌍 Geografía</span></div>
+    <div class="timer"><b>21</b></div>
+    <div class="qe">🗼</div>
+    <div class="q">¿Cuántos metros mide la Torre Eiffel?</div>
+    <div class="who">Turno de <b>Lucía</b></div>
+    <div class="input">300 <small>m</small></div>
+    <div class="send">Responder</div>
+   </div></div>
+   <div class="sticker st1"><div class="big">±9 %</div>de error. ¡Casi!</div>
+   <div class="sticker st2"><div class="big">🏆 Lucía</div>gana la ronda</div>
+  </div>
+ </div>
+</section>
+
+<div style="overflow:hidden;padding:10px 0 24px;margin-top:-10px"><div class="band"><span>A OJO</span><span class="d">●</span><span>SIN CALCULADORA</span><span class="d">●</span><span>GANA QUIEN MÁS SE ACERCA</span><span class="d">●</span><span>A OJO</span><span class="d">●</span><span>SIN CALCULADORA</span><span class="d">●</span><span>GANA QUIEN MÁS SE ACERCA</span></div></div>
+
+<section id="como" class="sec"><div class="wrap">
+ <span class="tag">Cómo se juega</span><h2>Tres pasos y a picarse.</h2>
+ <p class="lead">Un solo móvil que va pasando de mano en mano. Perfecto para quedadas, cenas o el recreo.</p>
+ <div class="steps">
+  <div class="step"><div class="n" style="background:var(--yellow)">1</div><h3>Prepara la partida</h3><p>Escribe los nombres de los jugadores y elige categorías, número de rondas y segundos para responder.</p></div>
+  <div class="step"><div class="n" style="background:var(--pink)">2</div><h3>Calcula a ojo</h3><p>Sale una pregunta con respuesta numérica. Cada uno escribe su número antes de que se acabe el tiempo.</p></div>
+  <div class="step"><div class="n" style="background:var(--mint)">3</div><h3>Mira quién se acerca</h3><p>Se revela la respuesta y el porcentaje de error de cada uno. El que menos falla, gana.</p></div>
+ </div></div></section>
+
+<section id="resultado" class="sec"><div class="wrap rgrid">
+ <div><span class="tag">Resultados</span><h2>Aquí no gana el que sabe. Gana el que más se acerca.</h2>
+  <p class="lead">Cada respuesta se mide en porcentaje de error, así que da igual si la pregunta va de metros, años o kilos. Al final de cada ronda, un gráfico deja claro quién tiene mejor ojo, y el marcador se va acumulando hasta la última.</p></div>
+ <div class="board">
+  <div class="bq">Pregunta 3<b>¿Cuántos metros mide la Torre Eiffel?</b></div><span class="ans">Respuesta: 330 m</span>
+  <div class="bars">
+   <div class="bar"><div class="v">9 %</div><div class="c" style="height:30%;background:var(--mint)"></div></div>
+   <div class="bar"><div class="v">39 %</div><div class="c" style="height:62%;background:var(--yellow)"></div></div>
+   <div class="bar"><div class="v">52 %</div><div class="c" style="height:80%;background:var(--pink)"></div></div>
+   <div class="bar"><div class="v">70 %</div><div class="c" style="height:96%;background:#9C7BFF"></div></div>
+  </div>
+  <div class="names"><span>Lucía</span><span>Marcos</span><span>Sara</span><span>Iván</span></div>
+  <div class="win"><span>🏆 Gana la ronda: Lucía</span><span>300 m</span></div>
+ </div></div></section>
+
+<section class="sec"><div class="wrap">
+ <span class="tag">Qué tiene</span><h2>Todo lo que necesitas para una buena partida.</h2>
+ <div class="fgrid">
+  <div class="f"><div class="e">🗂️</div><h3>Categorías</h3><p>Elige una o mezcla varias a la vez para que cada ronda sea distinta.</p></div>
+  <div class="f"><div class="e">⏱️</div><h3>Cuenta atrás</h3><p>Tú decides cuántos segundos hay para responder. Sin tiempo para pensarlo demasiado.</p></div>
+  <div class="f"><div class="e">🔁</div><h3>Rondas a tu medida</h3><p>Partidas cortas, largas o sin límite, hasta que alguien se rinda.</p></div>
+  <div class="f"><div class="e">📊</div><h3>Marcador justo</h3><p>Se mide el porcentaje de error. Si hay empate, va delante quien ha fallado menos.</p></div>
+  <div class="f"><div class="e">💾</div><h3>Recuerda tu grupo</h3><p>Guarda los nombres, las categorías y las rondas para la próxima partida.</p></div>
+  <div class="f"><div class="e">📱</div><h3>Un solo móvil</h3><p>No hace falta que todos tengan la app. Pasa el móvil y a jugar.</p></div>
+ </div></div></section>
+
+<section id="preguntas" class="sec"><div class="wrap">
+ <span class="tag" style="background:var(--ink);color:var(--yellow)">Prueba tu ojo</span><h2>¿Te atreves con estas?</h2>
+ <p class="lead">Piensa tu número antes de mirar la respuesta.</p>
+ <div class="qgrid">
+  <div class="qc"><div class="cat">Geografía</div><h3>¿Cuántos metros mide el Everest?</h3><details><summary>Ver respuesta →</summary><p>8.849 m</p></details></div>
+  <div class="qc"><div class="cat">Cuerpo humano</div><h3>¿Cuántos huesos tiene un adulto?</h3><details><summary>Ver respuesta →</summary><p>206</p></details></div>
+  <div class="qc"><div class="cat">Historia</div><h3>¿En qué año llegó el ser humano a la Luna?</h3><details><summary>Ver respuesta →</summary><p>1969</p></details></div>
+  <div class="qc"><div class="cat">Naturaleza</div><h3>¿Cuántas patas tiene una araña?</h3><details><summary>Ver respuesta →</summary><p>8</p></details></div>
+ </div></div></section>
+
+<section id="faq" class="sec"><div class="wrap">
+ <div style="text-align:center"><span class="tag">Preguntas frecuentes</span><h2>¿Alguna duda?</h2></div>
+ <div class="faqs">
+  <details open><summary>¿Cuántas personas pueden jugar?</summary><p>Las que quieras: escribes los nombres al empezar y el móvil va pasando de uno a otro en cada pregunta.</p></details>
+  <details><summary>¿Hace falta internet?</summary><p>No para jugar: las preguntas van dentro de la app.</p></details>
+  <details><summary>¿Es gratis?</summary><p>Sí. Ojímetro es gratis, con algún anuncio entre partidas.</p></details>
+  <details><summary>¿Para qué móviles está?</summary><p>Para Android, en Google Play.</p></details>
+ </div></div></section>
+
+<section id="descargar" class="sec" style="padding-top:20px"><div class="wrap">
+ <div class="cta">
+  <h2>¿Quién tiene mejor ojo en tu grupo?</h2>
+  <p>Descarga Ojímetro y descúbrelo en la próxima quedada.</p>
+  <div class="ctas"><span class="gp"><span style="font-size:30px">▶</span><span><small>Próximamente en</small><b>Google Play</b></span></span></div>
+ </div></div>
+ <div class="foot"><div class="logo" style="font-size:22px"><div class="eye" style="width:36px;height:36px"><i style="width:14px;height:14px"></i></div>Ojímetro</div><span>Hecho con Kotlin y Jetpack Compose · 2026</span></div>
+</section>
+</body></html>
